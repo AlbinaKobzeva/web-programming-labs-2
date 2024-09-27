@@ -1,9 +1,52 @@
 body {
     color: black;
-    background-color: #8adeb7;
+    background-color: #eacdeb;
+    padding-left: 15px;
 }
 
-.oak {
-    width: 800px;
+header {
+    border: 5px;
+    background-color: #cef0ff;
+    font-size: 30px;
+    opacity: 0.9;
+    border-radius: 20px;
+    border: thick double #000000;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    padding-top: 20px;
+}
+footer {
+    border: 5px;
+    background-color: #cef0ff;
+    font-size: 25px;
+    opacity: 0.9;
+    border-radius: 20px;
+    border: thick double #000000;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    text-align: left;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+p {
+    font-size: 18px;
+}
+img {
+    width: 400px;
+    height: auto; 
+}
+.vk {
+    width: 200px;
     height: auto;
+}
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+ul {
+    color: black;
 }
