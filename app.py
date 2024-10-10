@@ -168,11 +168,10 @@ def flowers(flower_id):
     
 @app.route('/lab2/add_flower/<name>')
 def add_flower(name):
-    # Проверим, есть ли уже цветок с таким именем, если нет - добавим новый
     for flower in all_flower_list:
         if flower['name'] == name:
             return f"Цветок с именем {name} уже существует.", 400
-    all_flower_list.append({'name': name, 'kolvo': 1})  # добавляем цветок с количеством 1 по умолчанию
+    all_flower_list.append({'name': name, 'kolvo': 1})  
     return redirect(url_for('all_flowers'))
 @app.route('/lab2/flower/')
 def no_flower():
