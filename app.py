@@ -182,4 +182,4 @@ def example ():
     numberLab = '2'
     groupStudent = 'ФБИ-24'
     numberCourse = '3 курс'
-    return render_template('example.html', name=name, numberLab=numberLab, groupStudent=groupStudent, numberCourse=numberCourse)
+    return render_template('example.html')
