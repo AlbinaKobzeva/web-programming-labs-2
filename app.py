@@ -237,3 +237,29 @@ book_list = [
 @app.route('/lab2/books')
 def books():
     return render_template('books.html', book_list=book_list)
+
+objects = [
+    {
+        "name": "Джордан",
+        "image": "джордан.jpg"
+    },
+    {
+        "name": "лакост",
+        "image": "лакост.jpg"
+    },
+    {
+        "name": "баленсиага",
+        "image": "баленсиага.jpg"
+    },
+    {
+        "name": "осирис",
+        "image": "осирис.jpg"
+    },
+    {
+        "name": "рики",
+        "image": "рики.jpg"
+    }
+]
+@app.route('/lab2/spisok')
+def spisok():
+    return render_template('spisok.html', objects=objects)
