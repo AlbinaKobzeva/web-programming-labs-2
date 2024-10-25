@@ -32,3 +32,28 @@ main {
     color:red;
     font-weight: bold;
 }
+
+.drinksdop{
+    color: rgb(30, 29, 27);
+    font-family: monospace;
+}
+.drinks{
+    color: rgb(30, 29, 27);
+    font-family: monospace;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+button {
+    background-color: #240a21;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
