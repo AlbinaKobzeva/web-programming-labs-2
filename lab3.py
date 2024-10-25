@@ -142,3 +142,39 @@ def clear_cookies():
     resp.delete_cookie('font_style')
     
     return resp
+
+
+products = [
+    {"name": "iPhone 14", "price": 75500, "color": "pink", "brand": "Apple"},
+    {"name": "iPhone13", "price": 60000, "color": "black", "brand": "Apple"},
+    {"name": "iPhone16", "price": 159000, "color": "white", "brand": "Apple"},
+    {"name": "iPhone15 ProMax", "price": 100000, "color": "platinum", "brand": "Apple"},
+    {"name": "iPhone12", "price": 55000, "color": "purple", "brand": "Apple"},
+    {"name": "iPhone11", "price": 40000, "color": "black", "brand": "Apple"},
+    {"name": "iPhone12 ProMax", "price": 59900, "color": "green", "brand": "Apple"},
+    {"name": "iPhone10", "price": 35000, "color": "red", "brand": "Apple"},
+    {"name": "iPhone14 ProMax", "price": 130990, "color": "purple", "brand": "Apple"},
+    {"name": "iPhone12 mini", "price": 57490, "color": "black", "brand": "Apple"},
+    {"name": "MacBook Air", "price": 145900, "color": "silver", "brand": "Apple"},
+    {"name": "MacBook Pro", "price": 228900, "color": "grey", "brand": "Apple"},
+    {"name": "iPhone16 ProMax", "price": 204900, "color": "white", "brand": "Apple"},
+    {"name": "AirPods Pro", "price": 25990, "color": "white", "brand": "Apple"},
+    {"name": "AirPods", "price": 25900, "color": "white", "brand": "Apple"},
+    {"name": "Apple Watch Series 8", "price": 35890, "color": "silver", "brand": "Apple"},
+    {"name": "Apple Watch Series 9", "price": 47800, "color": "black", "brand": "Apple"},
+    {"name": "iPhone13 ProMax", "price": 74990, "color": "blue", "brand": "Apple"},
+    {"name": "iPad", "price": 48400, "color": "grey", "brand": "Apple"},
+    {"name": "iMac", "price": 129990, "color": "green", "brand": "Apple"},
+    {"name": "AirPods Max", "price": 50990, "color": "pink", "brand": "Apple"}
+]
+
+
+@lab3.route('/lab3/form')
+def form():
+    return render_template('lab3/form.html')
+@lab3.route('/lab3/results')
+def results():
+    min_price = request.args.get('min_price', type=int)
+    max_price = request.args.get('max_price', type=int)
+    filtered_products = [p for p in products if min_price <= p["price"] <= max_price]
+    return render_template('lab3/results.html', products=filtered_products)

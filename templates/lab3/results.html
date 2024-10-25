@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block lab %}Результаты поиска{% endblock %}
+{% block main %}
+<h2>Результаты поиска</h2>
+<ul>
+    {% for product in products %}
+        <li>{{ product.name }} - {{ product.price }} руб. ({{ product.color }}, {{ product.brand }})</li>
+    {% endfor %}
+</ul>
+{% if not products %}
+    <p>Товары не найдены. </p> 
+{% endif %}
+<a href="{{ url_for('lab3.form') }}">Вернуться к поиску</a>
+{% endblock %}
