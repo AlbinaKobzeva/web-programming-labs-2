@@ -22,7 +22,7 @@ def flowers(flower_id):
     if flower_id >= len(all_flower_list):
         return "Такого цветка нет", 404
     else:
-        return render_template('addflower.html', flower_id=flower_id, flower=all_flower_list[flower_id])
+        return render_template('lab2/addflower.html', flower_id=flower_id, flower=all_flower_list[flower_id])
 
 
 @lab2.route('/lab2/add_flower/<name>')
@@ -31,7 +31,7 @@ def add_flower(name):
         if flower['name'] == name:
             return f"Цветок с именем {name} уже существует.", 400
     all_flower_list.append({'name': name, 'kolvo': 1})  
-    return redirect(url_for('all_flowers'))
+    return redirect(url_for('lab2.all_flowers'))
 
 
 @lab2.route('/lab2/flower/')
@@ -41,13 +41,13 @@ def no_flower():
 
 @lab2.route('/lab2/all_flowers')
 def all_flowers():
-    return render_template('flowers.html', all_flower_list=all_flower_list)
+    return render_template('lab2/flowers.html', all_flower_list=all_flower_list)
 
 
 @lab2.route('/lab2/flowers/clear')
 def clear_flowers():
     all_flower_list.clear()
-    return redirect(url_for('all_flowers'))
+    return redirect(url_for('lab2.all_flowers'))
 
 
 @lab2.route('/lab2/example')
@@ -63,35 +63,35 @@ def example ():
         {'name': 'мандарины', 'price': 95},
         {'name': 'манго', 'price': 321}
     ]
-    return render_template('example.html', name=name, numberLab=numberLab,
+    return render_template('lab2/example.html', name=name, numberLab=numberLab,
                            groupStudent=groupStudent, numberCourse=numberCourse, 
                            fruits=fruits)
 
 
 @lab2.route('/lab2/')
 def lab_2():
-    return render_template('lab2.html')
+    return render_template('lab2/lab2.html')
 
 
 @lab2.route('/lab2/filters')
 def filters():
     phrase = 'О <b>сколько</b> <u>нам</u> <i>открытий</i> чудных...'
-    return render_template('filter.html', phrase = phrase)
+    return render_template('lab2/filter.html', phrase = phrase)
 
 
 @lab2.route('/lab2/calc/<int:a>/<int:b>')
 def calc(a, b):
-    return render_template('calc.html', a=a, b=b)
+    return render_template('lab2/calc.html', a=a, b=b)
 
 
 @lab2.route('/lab2/calc/')
 def calc_without_numbers():
-    return redirect(url_for('calc', a=1, b=1))
+    return redirect(url_for('lab2.calc', a=1, b=1))
 
 
 @lab2.route('/lab2/calc/<int:a>/')
 def calc_with_a(a):
-    return redirect(url_for('calc', a=a, b=1))
+    return redirect(url_for('lab2.calc', a=a, b=1))
 
 book_list = [
     {"author": "Хьюберт Селби", "name": "Реквием по мечте", "genre": "Психологический-реализм", "pages": 320},
@@ -109,7 +109,7 @@ book_list = [
 
 @lab2.route('/lab2/books')
 def books():
-    return render_template('books.html', book_list=book_list)
+    return render_template('lab2/books.html', book_list=book_list)
 
 objects = [
     {
@@ -135,4 +135,4 @@ objects = [
 ]
 @lab2.route('/lab2/spisok')
 def spisok():
-    return render_template('spisok.html', objects=objects)
+    return render_template('lab2/spisok.html', objects=objects)

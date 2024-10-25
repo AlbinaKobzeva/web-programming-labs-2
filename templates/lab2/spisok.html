@@ -14,7 +14,7 @@
 </head>
 <body>
     {% for obj in objects %}
-        <img src="{{ url_for('static', filename=obj.image) }}"  width="200">
+        <img src="{{ url_for('static', filename='lab2/' + obj.image) }}"  width="200">
         <h2>{{ obj.name }}</h2>
     {% endfor %}
 </body>

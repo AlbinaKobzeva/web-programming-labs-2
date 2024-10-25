@@ -9,7 +9,7 @@ def lab():
     <head>
         <title>Кобзева Альбина Алексеевна, лабораторная 1</title>
     </head>
-    <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+    <link rel="stylesheet" href="''' + url_for('static', filename='lab1/lab1.css') + '''">
     <body>
         <header>
             НГТУ, ФБ, Лабораторная работа 1
@@ -47,10 +47,10 @@ def oak():
     return '''
 <!doctype html>
 <html>
-    <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''")
+    <link rel="stylesheet" href="''' + url_for('static', filename='lab1/lab1.css') + '''")
     <body>
         <h1 style='padding-left: 15px'>Дуб</h1>
-        <img src="''' + url_for('static', filename='oak.jpg') + '''" class='oak'>
+        <img src="''' + url_for('static', filename='lab1/oak.jpg') + '''" class='oak'>
     </body>
 </html>
 '''
@@ -61,10 +61,10 @@ def student():
     return '''
 <!doctype html>
 <html>
-    <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+    <link rel="stylesheet" href="''' + url_for('static', filename='lab1/lab1.css') + '''">
     <body>
         <h1>Кобзева Альбина Алексеевна</h1>
-        <img src="''' + url_for('static', filename='nstu.jpeg') + '''" class='nstu'>
+        <img src="''' + url_for('static', filename='lab1/nstu.jpeg') + '''" class='nstu'>
     </body>
 </html>
 '''
@@ -75,7 +75,7 @@ def python():
     return '''
 <!doctype html>
 <html>
-    <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+    <link rel="stylesheet" href="''' + url_for('static', filename='lab1/lab1.css') + '''">
     <body>
         <h1>Python</h1>
         <p>
@@ -87,7 +87,7 @@ def python():
             Python разработан Гвидо Ван Россумом (Guido Van Rossum), программистом из Нидерландов. 
             Он начал работу над языком в 1989 году в центре Centrum Wiskunde & Informatica (CWI).
         </p>
-        <img src="''' + url_for('static', filename='python.jpg') + '''" class='python'>
+        <img src="''' + url_for('static', filename='lab1/python.jpg') + '''" class='python'>
     </body>
 </html>
 '''
@@ -98,7 +98,7 @@ def vk():
     return '''
 <!doctype html>
 <html>
-    <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+    <link rel="stylesheet" href="''' + url_for('static', filename='lab1/lab1.css') + '''">
     <body>
         <h1>VK</h1>
         <p>
@@ -111,7 +111,7 @@ def vk():
             играть в браузерные игры. Также позиционирует себя платформой для продвижения бизнеса и 
             решения повседневных задач с помощью мини-приложений.
         </p>
-        <img src="''' + url_for('static', filename='vk.png') + '''" class='vk'>
+        <img src="''' + url_for('static', filename='lab1/vk.png') + '''" class='vk'>
     </body>
 </html>
 '''

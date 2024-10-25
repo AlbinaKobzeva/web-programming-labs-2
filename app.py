@@ -22,7 +22,7 @@ def menu():
 <html>
     <head>
         <title>НГТУ, ФБ, Лабораторные работы</title>
-        <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+        <link rel="stylesheet" href="''' + url_for('static', filename='lab1/lab1.css') + '''">
     </head>
     <body>
         <header>
@@ -50,7 +50,7 @@ def not_found_404(err):
 <html>
     <head>
         <title>НГТУ, ФБ, Лабораторные работы</title>
-        <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+        <link rel="stylesheet" href="''' + url_for('static', filename='lab1/lab1.css') + '''">
     </head>
     <body>
         <header>
@@ -74,7 +74,7 @@ def not_found_500(err):
 <html>
     <head>
         <title>НГТУ, ФБ, Лабораторные работы</title>
-        <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+        <link rel="stylesheet" href="''' + url_for('static', filename='lab1/lab1.css') + '''">
     </head>
     <body>
         <header>
