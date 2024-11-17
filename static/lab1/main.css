@@ -57,3 +57,22 @@ button {
     border: none;
     cursor: pointer;
 }
+
+
+
+.block {
+    display: inline-block;
+    padding:  15px;
+    margin: 5px;
+    background-color: #4d1b59;
+    border-radius: 5px;
+    text-align: center;
+}
+a.block {
+    color: white;
+}
+.block-container{
+    background-color: #e2a4fe;
+    padding: 30px;
+    text-align: center;
+}
