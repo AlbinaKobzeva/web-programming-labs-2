@@ -4,6 +4,7 @@ body {
     font-family: Arial;
     margin: 10px;
     text-decoration: none;
+    padding-bottom: 60px;
 }
 
 footer {
@@ -26,6 +27,7 @@ header {
 
 main {
     margin: 10px 20px 56px;
+    margin-bottom: 60px;
 }
 
 .error {
