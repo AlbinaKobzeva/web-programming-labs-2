@@ -4,6 +4,11 @@
 {# основной контент #}
 {% block main %}
     <h1> Создание статьи</h1>
+    {% if error %}
+        <div style="color: red;">
+            {{ error }}
+        </div>
+    {% endif %}
     <form method="post">
         <div>
             <label>
