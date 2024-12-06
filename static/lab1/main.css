@@ -52,16 +52,6 @@ label {
     display: block;
     margin: 10px 0;
 }
-button {
-    background-color: #240a21;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-}
-
-
-
 .block {
     display: inline-block;
     padding:  15px;
@@ -77,4 +67,28 @@ a.block {
     background-color: #e2a4fe;
     padding: 30px;
     text-align: center;
+}
+button {
+    margin-left: 15px;
+    padding: 8px; 
+    background-color: white; 
+    border: 4px solid rgb(37, 1, 25); 
+    color:  rgb(37, 1, 25); 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+button:hover {
+    background-color: rgb(184, 250, 160); 
+}
+#office-list {
+    list-style: none;
+    padding: 0; 
+}
+#office-list li {
+    margin-bottom: 15px; 
+}
+#total-cost {
+    margin-top: 20px; 
+    color: rgb(37, 1, 25);
 }
