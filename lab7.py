@@ -65,4 +65,4 @@ def add_film():
     if not film:
         abort(400)
     films.append(film)
-    return {"id": len(films) - 1}, 201
+    return film, 201
