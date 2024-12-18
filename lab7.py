@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, abort
+from flask import Blueprint, render_template, abort, request
 lab7 = Blueprint('lab7', __name__)
 @lab7.route('/lab7/')
 def lab():
@@ -50,3 +50,11 @@ def del_film(id):
         abort(404)
     del films[id]
     return '', 204 
+
+@lab7.route('/lab7/rest-api/films/<int:id>', methods=['PUT'])
+def put_film(id):
+    if id < 0 or id >= len(films):
+        abort(404)
+    film = request.get_json()
+    films[id] = film
+    return films[id] 
