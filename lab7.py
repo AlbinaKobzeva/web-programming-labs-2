@@ -56,6 +56,8 @@ def put_film(id):
     if id < 0 or id >= len(films):
         abort(404)
     film = request.get_json()
+    if film ['description'] == '':
+        return {'description': 'Заполните описание'}, 400
     films[id] = film
     return films[id] 
 
@@ -64,5 +66,7 @@ def add_film():
     film = request.get_json()
     if not film:
         abort(400)
+    if film.get('description', '') == '':
+        return {'description': 'Заполните описание'}, 400    
     films.append(film)
     return film, 201
