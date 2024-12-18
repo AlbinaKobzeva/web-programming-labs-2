@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, abort, request, jsonify
+from datetime import datetime
 lab7 = Blueprint('lab7', __name__)
 @lab7.route('/lab7/')
 def lab():
@@ -55,11 +56,22 @@ def del_film(id):
 def put_film(id):
     if id < 0 or id >= len(films):
         abort(404)
-    film = request.get_json()
-    if film ['description'] == '':
+    film = request.get_json() 
+    if film.get('description', '') == '':
         return jsonify({'description': 'Заполните описание'}), 400
-    if not film.get('title'):
+    elif len(film['description']) > 2000:
+        return jsonify({'description': 'Описание не должно превышать 2000 символов'}), 400
+    if not film.get('title') and not film.get('title_ru'):
+        return jsonify({'title': 'Заполните поля с названиями'}), 400
+    if not film.get('title_ru'):
+        return jsonify({'title_ru': 'Заполните русское название'}), 400
+    if film.get('title', '') == '':
         film['title'] = film['title_ru']
+    if not film.get('year'):
+        return jsonify({'year': 'Укажите год выпуска фильма'}), 400
+    elif not str(film['year']).isdigit() or int(film['year']) < 1895 or int(film['year']) > 2100:
+        return jsonify({'year': 'Введите корректный год (1800-2100)'}), 400
+        
     films[id] = film
     return jsonify(films[id]) 
 
@@ -70,7 +82,17 @@ def add_film():
         abort(400)
     if film.get('description', '') == '':
         return jsonify({'description': 'Заполните описание'}), 400 
-    if not film.get('title'):
-        film['title'] = film['title_ru']   
+    elif len(film['description']) > 2000:
+        return jsonify({'description': 'Описание не должно превышать 2000 символов'}), 400
+    if not film.get('title') and not film.get('title_ru'):
+        return jsonify({'title': 'Заполните поля с названиями'}), 400
+    if not film.get('title_ru'):
+        return jsonify({'title_ru': 'Заполните русское название'}), 400
+    if film.get('title', '') == '':
+        film['title'] = film['title_ru'] 
+    if not film.get('year'):
+        return jsonify({'year': 'Укажите год выпуска фильма'}), 400
+    elif not str(film['year']).isdigit() or int(film['year']) < 1895 or int(film['year']) > 2100:
+        return jsonify({'year': 'Введите корректный год (1800-2100)'}), 400
     films.append(film)
     return jsonify(film), 201
